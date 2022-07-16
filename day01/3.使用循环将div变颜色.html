@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+    <style type="text/css">
+        #outer div {
+            float: left;
+            width: 100px;
+            height: 100px;
+            background: black;
+            margin: 15px 10px 15px 0;
+            overflow: hidden;
+            zoom: 1;
+        }
+    </style>
+ 
+</head>
+<body>
+    <div id="outer">
+        <input type="button" id="btn" value="点击将div变成红色" /><br />
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <script type="text/javascript">
+        window.onload = function () {
+            /*获取盒子的数组*/
+            var oDiv = document.getElementsByTagName("div");
+            // alert(oDiv.index);
+            var oBtn = document.getElementById("btn");
+            oBtn.onclick = function () {
+                for (var i = 1; i < oDiv.length; i++) {
+                    oDiv[i].style.background = "red";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

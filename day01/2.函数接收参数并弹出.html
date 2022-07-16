@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2</title>
+    <style type="text/css">
+        input {
+            margin: 5px 0;
+        }
+
+        button {
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <input type="text" name="mission" value="西藏" />
+        <input type="text" name="mission" value="布达拉宫" /><br />
+        <input type="button" value="传的参" id="transFun" onclick=transFun() />
+    </div>
+    <script type="text/javascript">
+        function transFun() {
+            var line = document.getElementsByName("mission");
+            for (var i = 0; i < line.length; i++) {
+
+                alert(line[i].value);
+            }
+        }
+    </script>
+</body>
+
+</html>
