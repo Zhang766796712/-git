@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <style type="text/css">
+        p {
+            display: inline-block;
+        }
+
+        input {
+            display: inline-block;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="outer">
+        <input type="checkbox" />
+        <p>两周内自动登陆</p>
+        <div id="tips">德玛西亚</div>
+    </div>
+    <script>
+        window.onload = function () {
+            var oDiv = document.getElementById("outer");
+            var oTips = document.getElementById("tips");
+            oDiv.onmouseover = function () {
+                oTips.style.display = "block";
+            }
+            oDiv.onmouseout = function () {
+                oTips.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>

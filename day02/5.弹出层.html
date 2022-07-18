@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5</title>
+</head>
+<style>
+    h2 {
+        width: 200px;
+        height: 200px;
+        background-color: aqua;
+        display: none;
+    }
+</style>
+
+<body>
+    <button>弹出层</button>
+    <h2 id="h2">X</h2>
+</body>
+<script>
+    window.onload = function () {
+        var Btn = document.getElementsByTagName("button")[0];
+        var h2 = document.getElementById("h2");
+        Btn.onclick = function () {
+
+            h2.style.display = "block";
+        }
+        h2.onclick = function () {
+
+            h2.style.display = "none";
+        }
+    }
+</script>
+</body>
+
+</html>
