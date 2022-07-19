@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+    <style>
+        html,
+        body,
+        ul {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        #tab,
+        #div1 {
+            width: 340px;
+        }
+
+        #tab {
+            background: black;
+            color: white;
+        }
+
+        #tab li {
+            width: 100px;
+            float: left;
+            line-height: 30px;
+            text-align: center;
+        }
+
+        .current {
+            background: white;
+            color: black;
+        }
+
+        #div1 ul {
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body>
+    <ul id="tab">
+        <li class="current">第一节课</li>
+        <li>第二节课</li>
+        <li>第三节课</li>
+    </ul>
+    <div id="div1">
+        <ul style="display:block;">
+            <li>看到你们这么有才，我才发现我真的是来凑数的</li>
+            <li>看到你们这么有才，我才发现我真的是来凑数的</li>
+            <li>看到你们这么有才，我才发现我真的是来凑数的</li>
+            <li>看到你们这么有才，我才发现我真的是来凑数的</li>
+            <li>看到你们这么有才，我才发现我真的是来凑数的</li>
+            <li>看到你们这么有才，我才发现我真的是来凑数的</li>
+        </ul>
+        <ul>
+            <li>有时候生活没那么好，有时候生活也没那么坏</li>
+            <li>有时候生活没那么好，有时候生活也没那么坏</li>
+            <li>有时候生活没那么好，有时候生活也没那么坏</li>
+            <li>有时候生活没那么好，有时候生活也没那么坏</li>
+            <li>有时候生活没那么好，有时候生活也没那么坏</li>
+            <li>有时候生活没那么好，有时候生活也没那么坏</li>
+        </ul>
+        <ul>
+            <li>现实本就不会如你所愿，哪来那么多的如果</li>
+            <li>现实本就不会如你所愿，哪来那么多的如果</li>
+            <li>现实本就不会如你所愿，哪来那么多的如果</li>
+            <li>现实本就不会如你所愿，哪来那么多的如果</li>
+            <li>现实本就不会如你所愿，哪来那么多的如果</li>
+            <li>现实本就不会如你所愿，哪来那么多的如果</li>
+        </ul>
+    </div>
+    <script>
+        window.onload = function () {
+            var Li = document.getElementById("tab").getElementsByTagName("li");
+            var Ul = document.getElementById("div1").getElementsByTagName("ul");
+            // console.log(this); //输出为window。
+            for (var i = 0; i < Li.length; i++) {
+
+                Li[i].index = i;
+
+                Li[i].onmouseover = function () {
+                    /*循环所有的导航并且清空激活样式*/
+                    for (var y = 0; y < Li.length; y++) Li[y].className = "";
+                    /*给鼠标所在的导航添加激活样式*/
+                    console.log(this);
+                    this.className = "current";
+                    for (var y = 0; y < Ul.length; y++) Ul[y].style.display = "none";
+                    // console.log(this.index);
+                    Ul[this.index].style.display = "block";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

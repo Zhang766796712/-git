@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5</title>
+    <style>
+
+        /* 图片样式 */
+       img {
+            width: 100px;
+            height: 100px;
+            float: left;
+            margin: 2px;
+        }
+        .img{
+            width: 500px;
+            height: 600px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div id="outer">
+        <div>
+            <img src="./image/5.png" class="img" alt="">
+        </div>
+        <img src="./image/1.png" alt="">
+        <img src="./image/2.png" alt="">
+        <img src="./image/3.png" alt="">
+        <img src="./image/4.png" alt="">
+        <img src="./image/5.png" alt="">
+    </div>
+    <script type="text/javascript">
+        window.onload = function () {
+            var Img = document.getElementById("outer").getElementsByTagName("img");
+            /* 鼠标滑动事件 */
+            for (var i = 1; i < Img.length; i++) {
+                Img[i].index = i;
+                Img[i].onmouseover = function () {
+                    Img[0].src = "./image/" + this.index + ".png";
+                };
+            }
+        };
+    </script>
+</body>
+
+</html>

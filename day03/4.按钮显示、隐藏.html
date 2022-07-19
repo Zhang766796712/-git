@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4</title>
+    <style>
+        #outer {
+            border: 1px solid #000;
+            width: 300px;
+            color: #000;
+        }
+
+
+        #div1{
+            width: 20px;
+            height: 20px;
+            float: right;
+            margin: -37px 37px 0 0;
+            background-color: #000;
+        }
+        #list {
+            border-top: 1px solid #474958;
+        }
+
+        li {
+            background: #e0e2eb;
+            margin-bottom: 1px;
+        }
+        li:hover {
+            background: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="outer">
+        <div id="header">
+            <p>恕瑞玛</p>
+            <div id="div1"></div>
+        </div>
+        <ul id="list">
+            <li>德玛西亚1</li>
+            <li>德玛西亚2</li>
+            <li>德玛西亚3</li>
+            <li>德玛西亚4</li>
+            <li>德玛西亚5</li>
+            <li class="last">德玛西亚6</li>
+        </ul>
+    </div>
+    <script>
+        window.onload = function () {
+            var Header = document.getElementById("header");
+            var List = document.getElementById("list");
+            var Div = document.getElementById("div1");
+            var style = List.style;
+            Header.onclick = function () {
+                if (List.style.display != "none") {
+                    List.style.cssText = "display:none";
+                  
+                } else {
+                    List.style.cssText = "";
+                    Div.style.cssText = "";
+                }
+
+            }
+        }
+    </script>
+</body>
+
+</html>

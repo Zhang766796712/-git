@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <style>
+        #box {
+            width: 235px;
+            height: 100px;
+            background: #000;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        属性名：<input type="text" id="i1" value="background"><br>
+        属性值：<input type="text" id="i2" value="green"><br>
+        <input type="button" value="确定">
+        <input type="button" value="重置">
+        <div id="box">在上方输入框输入"属性名"及"属性值"，点击确定按钮查看效果。</div>
+    </div>
+
+    <script>
+        var change = function (z1, x1, y1) {
+            z1.style[x1] = y1
+        };
+        window.onload = function () {
+            /* 获取输入框中的值 */
+            var Input = document.getElementsByTagName("input");
+            var Box = document.getElementById("box");
+            /*按键功能*/
+            Input[2].onclick = function () {
+                var x = Input[0].value;
+                var y = Input[1].value;
+                change(Box, x, y);
+            };
+            Input[3].onclick = function () {
+                Box.removeAttribute("style");
+            };
+        };
+    </script>
+</body>
+
+</html>
