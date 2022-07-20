@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+    <style>
+        input {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="button" value="0">
+
+    <script>
+        window.onload = function () {
+            /*已经获取到确定的元素*/
+            var Input = document.getElementsByTagName("input")[0];
+            console.log(Input);
+            /*按钮的事件*/
+            function sum() {
+                var sum = parseInt(Input.value);
+                var i = 1;
+                return (sum += i);
+            }
+            Input.onclick = function () {
+                console.log(this.value);
+                alert(sum());
+                this.value = sum();
+            }
+        }
+    </script>
+</body>
+
+</html>

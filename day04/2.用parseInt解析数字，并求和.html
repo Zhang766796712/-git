@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2</title>
+    <style>
+        a{
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="outer">
+        <input type="text" id="first">+<input type="text" id="second">=<span id="sum"><a>?</a></span>
+        <input type="button" value="求和">
+    </div>
+    <script>
+        /* 获取两个输入框的值和sum值 */
+        window.onload = function () {
+            var Input = document.getElementsByTagName("input");
+            for (var i = 0; i < 2; i++) {
+                Input[i].onkeyup = function () {
+                    this.value = this.value.replace(/[^\d|","]/, "");
+                }
+                Input[2].onclick = function () {
+                    var f = document.getElementById("first").value;
+                    var s = document.getElementById("second").value;
+                    var Sum = document.getElementById("sum");
+                    var sum = 0
+                    console.log(Sum);
+                    sum += parseInt(f) + parseInt(s);
+                    Sum.innerHTML = sum;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4</title>
+</head>
+
+<body>
+    <div id="outer">
+        <input type="text">
+        <a>vs</a>
+        <input type="text">
+        <input type="button" value="最大的数是>>"><span>?</span>
+    </div>
+    <script type="text/javascript">
+        window.onload = function () {
+            var Input = document.getElementsByTagName("input");
+            var Span = document.getElementsByTagName("span")[0];
+            for (var i = 0; i < Input.length - 1; i++) {
+                /*输入框，限制类型*/
+                Input[i].onkeyup = function () {
+                    this.value = this.value.replace(/[^\d]/, "")
+                }
+                /*比较函数*/
+                function match() {
+                    var m = 0;
+                    m = parseInt(Input[0].value) >= parseInt(Input[1].value) ? parseInt(Input[0].value) :
+                        parseInt(Input[1].value)
+                    return m;
+                }
+                /*对比事件*/
+                Input[2].onclick = function () {
+                    Span.innerHTML = match();
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
