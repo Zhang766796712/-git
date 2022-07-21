@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2</title>
+    <style>
+        div {
+            width: 300px;
+            padding: 30px;
+            background: black;
+            text-align: center;
+        }
+
+        input {
+            outline: none;
+            width: 35px;
+            height: 20px;
+            margin: 0 10px;
+            line-height: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="text"><span>时</span>
+        <input type="text"><span>分</span>
+        <input type="text"><span>秒</span>
+    </div>
+
+    <script>
+        window.onload = function () {
+            var Input = document.getElementsByTagName("input");
+            var myDate = new Date();
+
+            function time() {
+                Input[0].value = myDate.getHours();
+                Input[1].value = myDate.getMinutes();
+                myDate.getSeconds() < 10 ? (Input[2].value = "0" + myDate.getSeconds()) : Input[2].value = myDate
+                    .getSeconds();
+            }
+        }
+
+        window.onload = function () {
+            var Input = document.getElementsByTagName("input");
+            /*time函数功能，获取当前时间和时间存储，故，需要将new Date()放在函数里面*/
+            setInterval(time, 1000);
+            time();
+
+            function time() {
+                var myDate = new Date();
+                Input[0].value = myDate.getHours();
+                Input[1].value = myDate.getMinutes();
+                myDate.getSeconds() < 10 ? (Input[2].value = "0" + myDate.getSeconds()) : Input[2].value = myDate
+                    .getSeconds();
+            }
+        }
+    </script>
+</body>
+
+</html>

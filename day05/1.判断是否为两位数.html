@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+</head>
+
+<body>
+    <div id="outer">
+        <input type="text">
+        <input type="button" value="是否为两位数">
+    </div>
+    <script>
+        window.onload = function () {
+            /*获取元素输入框*/
+            var Input = document.getElementsByTagName("input");
+            for (var i = 0; i < Input.length; i++) {
+                /* 限制输入内容为数字 */
+                Input[0].onkeyup = function () {
+                    this.value = this.value.replace(/[^\d]/, "");
+                }
+                Input[1].onclick = function () {
+                    /* 提取字符长度 */
+                    var oF = Input[0].value;
+                    var n = oF.length;
+                    alert(n == 2 ? "这是两位数" : "这是" + n + "位数");
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
